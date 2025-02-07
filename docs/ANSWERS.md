@@ -7,6 +7,9 @@ _Inscrire la documentation technique_
 ## Questions (étapes 4 à 7)
 
 ### Étape 4
+Pour stocker les informations récupérées des trois sources de données (tracks, users, listen history) 
+une base de données relationnelle tel que PostgreSQL serait utilisé pour préserver la structure relationelle des donnés.
+![My Local Image](diagram_bd.png)
 
 _votre réponse ici_
 
