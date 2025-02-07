@@ -1,9 +1,15 @@
+import logging
+from datetime import datetime
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from classes_out import ListenHistoryOut, TracksOut, UsersOut
 from fastapi import FastAPI, Query
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import RedirectResponse
 from fastapi_pagination import Page, add_pagination, paginate
 from generate_fake_data import FakeDataGenerator
+from data_ingestion import fetch_all_data
+
+logging.basicConfig(level=logging.INFO)
 
 Page = Page.with_custom_options(
     size=Query(100, ge=1, le=100),
@@ -52,3 +58,19 @@ async def get_listen_history() -> Page[ListenHistoryOut]:
 
 
 add_pagination(app)
+
+
+# ---------------------------------------------------------------------
+# Scheduling with AsyncIOScheduler
+# Schedule the task to run immediately once and then daily
+# ---------------------------------------------------------------------
+
+@app.on_event("startup")
+async def start_scheduler():
+
+    scheduler = AsyncIOScheduler()
+    scheduler.add_job(fetch_all_data, 'date', run_date=datetime.now(), id="now_job")
+    scheduler.add_job(fetch_all_data, 'interval', hours=24)
+    scheduler.start()
+
+    logging.info("Data Ingestion Scheduler started.")
