@@ -1,6 +1,13 @@
 # Réponses du test
 
 ## _Utilisation de la solution (étape 1 à 3)_
+Pour lancer le serveur, déplacez-vous dans le dossier src/moovitamix_fastapi
+1. Installer le recommandation: pip install -r requirements.txt
+2. activer l'environnment virtuel: source myenv/bin/activate 
+3. lancer l'applicaiton: python -m uvicorn main:app
+
+L'application va starter le scheduler d'Ingestion. Une premiere ingestion sera effectuer et storer dans des dataframes.
+Les logs devrait indiquer le succes des 3 appels API.
 
 _Inscrire la documentation technique_
 
