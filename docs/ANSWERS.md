@@ -28,8 +28,17 @@ Métriques Clés à Suivre:
 
 ### Étape 6
 
-_votre réponse ici_
+Architecture du Système de recommnadation
+
+![My Local Image](systeme_recommandation.png)
 
 ### Étape 7
+Réentrainement du modèle de recommandation
 
-_votre réponse ici_
+Le réentrainement peut se faire de façon manuel ou automatique.
+
+Un réentrainement périodique peut etre planifier quotidiemment, hebodamadairement ou mensuellement selon le type de  
+model de filtrage. 
+Par exemple, vu que les gout des utilisateurs peuvent etre assez constant dans leur gout musical, on peut laisser a la machine le temps d'ingerer beaucoup de donnee et de l'etudier avant de proposer de nouvelles recommandations.  
+Le systeme peut aussi recommander de nouvelles tracks plus rapidement selon l'activiter de l'utilisateur si il detecte un changement drastique dans son comportement.
+
