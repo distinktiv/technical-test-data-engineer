@@ -11,11 +11,20 @@ Pour stocker les informations récupérées des trois sources de données (track
 une base de données relationnelle tel que PostgreSQL serait utilisé pour préserver la structure relationelle des donnés.
 ![My Local Image](diagram_bd.png)
 
-_votre réponse ici_
 
 ### Étape 5
 
-_votre réponse ici_
+Pour suivre la santé du pipeline, quelques outils peuvent être mis en place:
+- Logs: Permet de capturer les erreurs qui surviennent lors de l'ingestion des données.
+- Monitoring: Des outils tel que Sentry, Datadog, Kibana vont servir d'interface visuel pour surveiller et analyser les logs.
+
+Métriques Clés à Suivre:
+- Surveillance: 
+  - Monitoring des erreurs.
+  - Suivie des appels API externes.
+- Performance: le temps d'exécution du pipeline 
+- Fiabilité: Taux de reussite de l'ingestion des ressources
+- Ressource CPU: utilisation des ressources CPU
 
 ### Étape 6
 
